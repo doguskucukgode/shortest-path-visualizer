@@ -1,5 +1,6 @@
 package com.mex.shortestpath.main;
 
+import com.mex.shortestpath.algorithm.DijkstraAlgorithm;
 import com.mex.shortestpath.model.City;
 import com.mex.shortestpath.model.Edge;
 import com.mex.shortestpath.projector.PngCreator;
@@ -7,6 +8,7 @@ import com.mex.shortestpath.projector.SphericalMercator;
 import com.mex.shortestpath.projector.WidthHeightProjector;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ShortestPathGenerator {
@@ -32,7 +34,10 @@ public class ShortestPathGenerator {
         sphericalMercator.transFormPixels(cities);
         WidthHeightProjector widthHeightProjector = new WidthHeightProjector(width, height, sphericalMercator);
         widthHeightProjector.adjustPixels(cities);
-        PngCreator pngCreator = new PngCreator(cities, edges, width, height);
+        DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(cities, edges);
+        dijkstra.execute(startCity);
+        LinkedList<City> path = dijkstra.getPath(endCity);
+        PngCreator pngCreator = new PngCreator(cities, edges, width, height, path);
         pngCreator.exportImage();
     }
 }

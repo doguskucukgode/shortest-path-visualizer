@@ -1,5 +1,6 @@
 package com.mex.shortestpath.projector;
 
+import com.mex.shortestpath.config.AppConfig;
 import com.mex.shortestpath.model.City;
 import com.mex.shortestpath.model.Edge;
 
@@ -9,6 +10,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,12 +20,14 @@ public class PngCreator {
     private List<Edge> edges;
     private int width;
     private int height;
+    private LinkedList<City> path;
 
-    public PngCreator(List<City> cities, List<Edge> edges, int width, int height) {
+    public PngCreator(List<City> cities, List<Edge> edges, int width, int height, LinkedList<City> path) {
         this.cities = cities;
         this.edges = edges;
         this.width = width;
         this.height = height;
+        this.path = path;
     }
 
     public void exportImage() throws IOException {
@@ -50,8 +54,19 @@ public class PngCreator {
             g.drawLine(edge.getStart().getAdjustedX(), edge.getStart().getAdjustedY(),
                     edge.getEnd().getAdjustedX(), edge.getEnd().getAdjustedY());
         }
+        if(!path.isEmpty()) {
+            City current = path.get(0);
+            for (int i = 1; i < path.size(); i++) {
+                City endCity = path.get(i);
+                // line with arrow
+                LineArrow lineArrow = new LineArrow(current.getAdjustedX(), current.getAdjustedY(),
+                        endCity.getAdjustedX(), endCity.getAdjustedY(), Color.GREEN, 2);
+                lineArrow.draw(g);
+                current = endCity;
+            }
+        }
         // create the image file
-        ImageIO.write(bufferedImage, "PNG", new File("output.png"));
+        ImageIO.write(bufferedImage, "PNG", new File(AppConfig.OUTPUT_FILE));
     }
 
     public static void drawCenteredCircle(Graphics2D g, int x, int y, int r) {

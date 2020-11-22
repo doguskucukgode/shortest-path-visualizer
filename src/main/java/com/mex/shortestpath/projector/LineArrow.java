@@ -1,3 +1,5 @@
+package com.mex.shortestpath.projector;
+
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
