@@ -9,12 +9,12 @@ import java.awt.geom.AffineTransform;
 
 public class LineArrow {
 
-    int x;
-    int y;
-    int endX;
-    int endY;
-    Color color;
-    int thickness;
+    private final int x;
+    private final int y;
+    private final int endX;
+    private final int endY;
+    private final Color color;
+    private final int thickness;
 
     public LineArrow(int x, int y, int x2, int y2, Color color, int thickness) {
         super();

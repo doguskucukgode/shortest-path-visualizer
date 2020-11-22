@@ -5,9 +5,9 @@ import com.mex.shortestpath.model.City;
 
 public class WidthHeightProjector {
 
-    private int width;
-    private int height;
-    private SphericalMercator sphericalMercator;
+    private final int width;
+    private final int height;
+    private final SphericalMercator sphericalMercator;
 
     public WidthHeightProjector(int width, int height, SphericalMercator sphericalMercator) {
         this.width = width;
@@ -35,5 +35,4 @@ public class WidthHeightProjector {
             city.setAdjustedY((int) (height - heightPadding - (city.getImagePixels().getY() * globalRatio)));
         }
     }
-
 }

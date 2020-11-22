@@ -18,31 +18,15 @@ public class Edge {
         return start;
     }
 
-    public void setStart(City start) {
-        this.start = start;
-    }
-
     public City getEnd() {
         return end;
-    }
-
-    public void setEnd(City end) {
-        this.end = end;
     }
 
     public Double getDistance() {
         return distance;
     }
 
-    public void setDistance(Double distance) {
-        this.distance = distance;
-    }
-
     public Integer getTime() {
         return time;
-    }
-
-    public void setTime(Integer time) {
-        this.time = time;
     }
 }

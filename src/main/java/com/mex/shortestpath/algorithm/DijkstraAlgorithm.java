@@ -15,17 +15,16 @@ import java.util.Set;
 
 public class DijkstraAlgorithm {
 
-    private final List<City> nodes;
     private final List<Edge> edges;
     private Set<City> settledNodes;
     private Set<City> unSettledNodes;
     private Map<City, City> predecessors;
     private Map<City, Double> distance;
-    private Map<City, Integer> time;
+    private boolean timeBasedPath = true;
 
-    public DijkstraAlgorithm(List<City> cities, List<Edge> edges) {
-        this.nodes = new ArrayList<>(cities);
+    public DijkstraAlgorithm(List<Edge> edges, boolean timeBasedPath) {
         this.edges = new ArrayList<>(edges);
+        this.timeBasedPath = timeBasedPath;
     }
 
     public void execute(City source) {
@@ -61,14 +60,18 @@ public class DijkstraAlgorithm {
         for (Edge edge : edges) {
             if (edge.getStart().equals(node)
                     && edge.getEnd().equals(target)) {
-                return edge.getDistance();
+                if (timeBasedPath) {
+                    return edge.getTime();
+                } else {
+                    return edge.getDistance();
+                }
             }
         }
         throw new RuntimeException("Should not happen");
     }
 
     private List<City> getNeighbors(City node) {
-        List<City> neighbors = new ArrayList<City>();
+        List<City> neighbors = new ArrayList<>();
         for (Edge edge : edges) {
             if (edge.getStart().equals(node)
                     && !isSettled(edge.getEnd())) {

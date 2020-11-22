@@ -16,11 +16,11 @@ import java.util.Map;
 
 public class PngCreator {
 
-    private List<City> cities;
-    private List<Edge> edges;
-    private int width;
-    private int height;
-    private LinkedList<City> path;
+    private final List<City> cities;
+    private final List<Edge> edges;
+    private final int width;
+    private final int height;
+    private final LinkedList<City> path;
 
     public PngCreator(List<City> cities, List<Edge> edges, int width, int height, LinkedList<City> path) {
         this.cities = cities;

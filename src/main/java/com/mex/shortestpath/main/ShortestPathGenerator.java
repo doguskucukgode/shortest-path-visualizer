@@ -13,20 +13,23 @@ import java.util.List;
 
 public class ShortestPathGenerator {
 
-    private List<City> cities;
-    private List<Edge> edges;
-    private Integer width;
-    private Integer height;
-    private City startCity;
-    private City endCity;
+    private final List<City> cities;
+    private final List<Edge> edges;
+    private final Integer width;
+    private final Integer height;
+    private final City startCity;
+    private final City endCity;
+    private boolean timeBasedPath;
 
-    public ShortestPathGenerator(List<City> cities, List<Edge> edges, Integer width, Integer height, City startCity, City endCity) {
+    public ShortestPathGenerator(List<City> cities, List<Edge> edges, Integer width, Integer height, City startCity,
+                                 City endCity, boolean timeBasedPath) {
         this.cities = cities;
         this.edges = edges;
         this.width = width;
         this.height = height;
         this.startCity = startCity;
         this.endCity = endCity;
+        this.timeBasedPath = timeBasedPath;
     }
 
     public void generate() throws IOException {
@@ -34,7 +37,7 @@ public class ShortestPathGenerator {
         sphericalMercator.transFormPixels(cities);
         WidthHeightProjector widthHeightProjector = new WidthHeightProjector(width, height, sphericalMercator);
         widthHeightProjector.adjustPixels(cities);
-        DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(cities, edges);
+        DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(edges, timeBasedPath);
         dijkstra.execute(startCity);
         LinkedList<City> path = dijkstra.getPath(endCity);
         PngCreator pngCreator = new PngCreator(cities, edges, width, height, path);
