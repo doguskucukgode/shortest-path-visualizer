@@ -2,7 +2,11 @@ package com.mex.shortestpath.main;
 
 import com.mex.shortestpath.model.City;
 import com.mex.shortestpath.model.Edge;
+import com.mex.shortestpath.projector.PngCreator;
+import com.mex.shortestpath.projector.SphericalMercator;
+import com.mex.shortestpath.projector.WidthHeightProjector;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ShortestPathGenerator {
@@ -23,7 +27,12 @@ public class ShortestPathGenerator {
         this.endCity = endCity;
     }
 
-    public void generate() {
-        System.out.println("Image is written in output.png");
+    public void generate() throws IOException {
+        SphericalMercator sphericalMercator = new SphericalMercator();
+        sphericalMercator.transFormPixels(cities);
+        WidthHeightProjector widthHeightProjector = new WidthHeightProjector(width, height, sphericalMercator);
+        widthHeightProjector.adjustPixels(cities);
+        PngCreator pngCreator = new PngCreator(cities, edges, width, height);
+        pngCreator.exportImage();
     }
 }

@@ -62,8 +62,6 @@ public class ShortestPathApplication implements Runnable {
             ShortestPathGenerator shortestPathGenerator = new ShortestPathGenerator(fileParser.getCities(),
                     fileParser.getEdges(), width, height, startCity, endCity);
             shortestPathGenerator.generate();
-            MapService mapService = new MapService(fileParser.getCities());
-            mapService.run();
         } catch (FileNotFoundException | CityNotFoundException | OutOfRangeException e) {
             System.err.println(e.getMessage());
             return;
