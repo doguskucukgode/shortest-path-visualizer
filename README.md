@@ -38,3 +38,4 @@ Commands:
   help  Displays help information about the specified command
 ```
 
+![alt text](./sample_output/output.png "Logo Title Text 1")
