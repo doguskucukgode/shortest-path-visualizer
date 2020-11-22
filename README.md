@@ -4,15 +4,15 @@ Finds the shortest path (Dijkstra's algorithm) between the two given locations i
 ## Maven
 ### Running with default options
 ```
-mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplication"  -Dexec.args="-s Subotica -e Zrenjanin -i ./cities.dat"
+mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplication"  -Dexec.args="-s Subotica -e Ruma -i ./cities.dat"
 ```
 ### Running with different width height
 ```
-mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplication"  -Dexec.args="-s Subotica -e Zrenjanin -i ./cities.dat -w 1000 -h 1000"
+mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplication"  -Dexec.args="-s Subotica -e Ruma -i ./cities.dat -w 1000 -h 1000"
 ```
 ### Running with time based path
 ```
-mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplication"  -Dexec.args="-s Subotica -e Zrenjanin -i ./cities.dat -w 1000 -h 1000 --time-based-path"
+mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplication"  -Dexec.args="-s Subotica -e Ruma -i ./cities.dat -w 1000 -h 1000 --time-based-path"
 ```
 
 ## Help screen for application
