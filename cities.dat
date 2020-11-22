@@ -1,0 +1,58 @@
+[junctions]
+; city, lat, lng
+junction1=Subotica, 46.099482, 19.670069
+junction2=Kanjiža, 46.062513, 20.051904
+junction3=Senta, 45.928325, 20.086365
+junction4=Sombor, 45.770616, 19.116589
+junction5=Bačka Topola,45.812892, 19.630098
+junction6=Ada, 45.796703, 20.133137
+junction7=Kikinda, 45.831178, 20.473791
+junction8=Vrbas, 45.568624, 19.652300
+junction9=Bečej,45.614361, 20.047463
+junction10=Zrenjanin, 45.379652, 20.395340
+junction11=Bačka Palanka, 45.252139, 19.397028
+junction12=Novi Sad, 45.254284, 19.842461
+junction13=Ruma, 45.007928, 19.816085
+junction14=Pančevo, 44.878964, 20.657296
+junction15=Sremska Mitrovica, 44.979736, 19.610388
+junction16=Vršac, 45.122362, 21.297521
+
+[edges]
+; start, end, weight in km, weight in minutes
+edge1=Subotica, Kanjiža, 40.1, 41
+edge2=Kanjiža, Subotica, 40.1, 41
+edge3=Subotica, Bačka Topola, 41.1, 33
+edge4=Bačka Topola, Subotica, 41.1, 33
+edge5=Sombor, Subotica, 56.9, 63
+edge6=Sombor, Bačka Topola, 47.4, 58
+edge7=Bačka Topola, Sombor, 47.4, 58
+edge8=Bačka Topola, Novi Sad, 73.6, 93
+edge9=Bačka Topola, Vrbas, 30.9, 47
+edge10=Vrbas, Bačka Palanka, 47.8, 69
+edge11=Novi Sad, Bačka Topola, 73.6, 93
+edge12=Kanjiža, Senta, 22.8, 28
+edge13=Senta, Kanjiža, 22.8, 28
+edge14=Senta, Ada, 17.8, 23
+edge15=Ada, Senta, 17.8, 23
+edge16=Ada, Zrenjanin, 71.9, 99
+edge17=Zrenjanin, Ada, 71.9, 99
+edge18=Kikinda, Ada, 30.4, 44
+edge19=Ada, Kikinda, 30.4, 44
+edge20=Bečej, Subotica, 95, 75
+edge21=Zrenjanin, Novi Sad, 50.1, 61
+edge22=Novi Sad, Zrenjanin, 50.1, 61
+edge23=Novi Sad, Bačka Palanka, 40, 54
+edge24=Bačka Palanka, Novi Sad, 40, 54
+edge25=Bačka Palanka, Sombor, 76.6, 98
+edge26=Novi Sad, Sremska Mitrovica, 53.4, 66
+edge27=Sremska Mitrovica, Novi Sad, 53.4, 66
+edge28=Sremska Mitrovica, Ruma, 23.9, 25
+edge29=Ruma, Sremska Mitrovica, 24, 26
+edge31=Ruma, Novi Sad, 33.8, 42
+edge32=Ruma, Zrenjanin, 82.9, 105
+edge33=Bečej, Novi Sad, 48.8, 59
+edge34=Ada, Bečej, 23.6, 25
+edge35=Zrenjanin, Pančevo, 78.2, 96
+edge36=Pančevo, Zrenjanin, 78.2, 96
+edge37=Pančevo, Vršac, 65.7, 76
+edge38=Vršac, Pančevo, 65.7, 76
