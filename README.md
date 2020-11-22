@@ -1,10 +1,10 @@
 # Shortest path visualizer
-Finds the shortest path (Dijkstra's algorithm) between the two given locations in terms of distance or time. Exports map as png format and visializes route. Input file should be located on root folder. Image is exported on root folder as `output.png` 
+Finds the shortest path (Dijkstra's algorithm) between the two given locations in terms of distance or time. Exports map as png format and visializes route. Input file should be located on root folder and default is `cities.dat`. Image is exported on root folder as `output.png` 
 
 ## Maven
 ### Running with default options
 ```
-mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplication"  -Dexec.args="-s Subotica -e Ruma -i ./cities.dat"
+mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplication"  -Dexec.args="-s Subotica -e Ruma"
 ```
 ### Running with different width height
 ```
@@ -13,6 +13,11 @@ mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplicatio
 ### Running with time based path
 ```
 mvn exec:java -Dexec.mainClass="com.mex.shortestpath.main.ShortestPathApplication"  -Dexec.args="-s Subotica -e Ruma -i ./cities.dat -w 1000 -h 1000 --time-based-path"
+```
+## Executable jar
+```
+mvn clean package
+java -jar target/ShortestPathGenerator-1.0-SNAPSHOT.jar -s Subotica -e Ruma
 ```
 
 ## Help screen for application
