@@ -1,5 +1,5 @@
 # Shortest path visualizer
-Finds the shortest path (Dijkstra's algorithm) between the two given locations in terms of distance or time. Exports map as png format and visializes route. Input file should be located on root folder and default is `cities.dat`. Image is exported on root folder as `output.png` 
+Finds the shortest path (Dijkstra's algorithm) between the two given locations in terms of distance or time. Exports map as png format and visualizes the route. Input file should be located on root folder and default is `cities.dat`. Image is exported on root folder as `output.png` 
 
 ## Maven
 ### Running with default options
